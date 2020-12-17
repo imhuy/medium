@@ -1,7 +1,7 @@
 
 const puppeteer = require('puppeteer');
 const URL = 'https://medium.com/better-programming/deploying-a-react-app-to-aws-s3-e0f31be17734'
-
+const fetch = require('node-fetch');
 
 async function processData(data) {
 
@@ -57,19 +57,22 @@ async function processData(data) {
     return content.join('')
 }
 
-
 async function processUrl(url) {
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     await page.goto(url);
     const imgLinks = await page.evaluate(async () => {
+
+        //get tag
         let tag = document.getElementsByTagName('ul')
         tag = tag[tag.length - 1]?.innerText;
         tags = tag?.replace(/\n/gi, ',')
 
+        //get thumb
         let thumb = document.querySelector('article').getElementsByTagName('img')
         let thumburl = thumb[0].currentSrc;
 
+        //get content 
         let content = Array.from(document.getElementsByTagName('script')).map(a => a.innerText);
         const result = content.filter(word => word.startsWith('window.__APOLLO_STATE'))[0];
         const data = result.replace('window.__APOLLO_STATE__ = ', '');
@@ -88,9 +91,32 @@ async function processUrl(url) {
 
 
 
+async function post(body) {
+    fetch('http://localhost/post', {
+        method: 'post',
+        body: JSON.stringify(body),
+        headers: { 'Content-Type': 'application/json' },
+    })
+        .then(res => res.json())
+        .then(json => console.log(json));
+
+}
+
+
 async function done() {
     let r = await processUrl(URL)
     let x = await processData(JSON.parse(r.content))
-    console.log(x)
+
+    const body = {
+        title: 'Deploying a React App to AWS S3',
+        content: x,
+        tag: r.tags,
+        category: ['a', 'b', 'c'],
+        image: r.thumb,
+        description: 'huy test'
+    }
+
+    await post(body)
+
 }
 done()
