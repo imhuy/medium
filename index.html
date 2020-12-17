@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h3>Deploying a React App to AWS S3</h3>
+  <h4>How to use CI/CD pipelines to automate your build process</h4>
+  <figure><img src='https://cdn-images-1.medium.com/max/1024/0*b66VkqYd8clNNNhh'>
+    <figcaption>Photo by <a href='https://unsplash.com/@justinlim?utm_source=medium&utm_medium=referral'> <a
+          href='https://unsplash.com?utm_source=medium&utm_medium=referral'>Justin Lim</a> </a> on Unsplash</img>
+  </figure>
+  </figcaption>
+  <p>Being a software engineer is not just about coding and building projects. It’s a massive ecosystem consisted of
+    requirement analysis, designing, development, deploying, maintaining, etc.</p>
+  <p>So it’s essential to automate things to reduce the time and focus on the development process’s core
+    functionalities. We can use CI/CD tools to manage such situations easily.</p>
+  <p>In this article, I’m planning to integrate the GitHub repo and AWS S3 bucket to automate the deployment of a React
+    application using a CI/CD tool named <a href='https://buddy.works/'>Buddy</a>.</p>
+  <p>Before that, let’s get a simple understanding of CI/CD tools.</p>
+  <h3>What Are CI/CD Tools?</h3>
+  <p>Continuous integration, continuous delivery, and continuous deployment (CI/CD) have been used in the software
+    development industry for a long period. CI/CD practices can contribute similarly in both infrastructure and
+    internally developed applications. Many organizations use CI/CD tools to automate different phases of their
+    application build.</p>
+  <p>There are diverse Of CI/CD tools, but they all use closely related models. When choosing a CI/CD tool, you have to
+    consider whether it is hosted or not, whether the UI is user friendly and simple to use, and whether it keeps up
+    with Docker. An interesting fact is that CI/CD practices will help place you in a better position to guide your
+    organization through this novel practice. Rather, you will be a guide for everyone else to follow.</p>
+  <h3>Why I Chose Buddy</h3>
+  <p>Recently, I came across this fantastic user-friendly CI/CD tool called Buddy that builds, tests, and deploys
+    applications using code from GitLab, Bitbucket, and GitHub. It utilizes Docker containers with pre-installed
+    languages and frameworks to build on, monitor, and notify actions. Buddy helps you to design delivery pipelines to
+    build, test, and deploy your application on a single branch push. The pipelines comprise steps you can configure
+    according to your requirements.</p>
+  <p>In this article, let’s see how to deploy your React application to AWS S3 using Buddy. Here we go!</p>
+  <h3>Task 1. Create a New IAM User Role in AWS</h3>
+  <p>Log in to your AWS console, select IAM service, and then select Users. Then choose Add User, and you will be
+    redirected to a UI like this where you can give a name to the new user. Select “Programmatic access” as the access
+    type and continue to the permission section.</p>
+  <figure><img src='https://cdn-images-1.medium.com/max/1024/1*w_WnbrcV9-snF9b6U18xAg.png'>
+    <figcaption>Screenshot by Author</img>
+  </figure>
+  </figcaption>
+  <p>In the permission section, select the “Attach existing plicies directly” tab and select “AmazonS3FullAccess” from
+    the list below.</p>
+  <figure><img src='https://cdn-images-1.medium.com/max/1024/1*DmJbnySvjseKpR3Cd1VXAw.png'>
+    <figcaption>Screenshot by Author</img>
+  </figure>
+  </figcaption>
+  <p>After successfully creating a user, you will receive the Access Key ID and Secret Access Key, which will be used
+    later to make a connection between the CI/CD pipeline and AWS services. Make sure you download and save those IDs.
+  </p>
+  <figure><img src='https://cdn-images-1.medium.com/max/1024/0*exiDJp-8zfqYxHhE.png'>
+    <figcaption>Screenshot by Author</img>
+  </figure>
+  </figcaption>
+  <h4>Task 2. Create an S3 Bucket and Enable Static Site Hosting</h4>
+  <p>This is a straightforward step. You just need to go to the S3 service using your AWS console and create a new
+    bucket. Please make sure to remove the tick from “Block all public access”<strong> </strong>to make the bucket
+    public.</p>
+  <figure><img src='https://cdn-images-1.medium.com/max/1024/1*8T6gMMNV4sIVTTgl0IyxJg.png'>
+    <figcaption>Screenshot by Author</img>
+  </figure>
+  </figcaption>
+  <p>After creating the bucket, add the following plicy as a bucket plicy:</p>
+  <pre>{
+      “Version”: “2008–10–17”,
+      “Statement”: 
+              [
+                 {
+                   “Sid”: “AllowPublicRead”,
+                   “Effect”: “Allow”,
+                   “Principal”: 
+                              {
+                               “AWS”: “*”
+                              },
+                   “Action”: “s3:GetObject”,
+                   “Resource”: “arn:aws:s3:::<bucket_name>/*”
+                 }
+               ]
+}</pre>
+  <p>As the final step of bucket creation, you need to go to the properties section to enable the static hosting option
+    for your bucket. Once you are done, you will receive a URL for the bucket.</p>
+  <figure><img src='https://cdn-images-1.medium.com/max/1024/1*tumcRnCEpqWeDTb2FjsP_Q.png'>
+    <figcaption>Screenshot by Author</img>
+  </figure>
+  </figcaption>
+  <h3>Task 3. Create a New Project/Select Your Git Repository</h3>
+  <p>Next, if you haven’t yet, <a href='https://app.buddy.works/sign-up'>sign up with Buddy</a> or log in using your
+    GitHub, Bitbucket, or Google account.</p>
+  <p>Once you have logged in to your Buddy account, you can get started by creating a new project. You will be able to
+    select your Git provider and repository in this stage. Once you finalize them, click the “Create a new project”
+    button to confirm.</p>
+  <p>Buddy allows you to connect with all the popular Git providers including GitHub, Bitbucket, GitLab, and private
+    repositories with few clicks.</p>
+  <figure><img src='https://cdn-images-1.medium.com/max/1024/1*TLak0D51Oc76GLG8EoN7qw.png'>
+    <figcaption>Screenshot by Author</img>
+  </figure>
+  </figcaption>
+  <h3>Task 4. Create a New Pipeline</h3>
+  <p>To automate your React application, add a new delivery pipeline. Enter the pipeline name, trigger mode, and the
+    branch from which Buddy will obtain your code. Then click the “Add a new pipeline” button to continue.</p>
+  <p>“Branch allocation” is specifying the branch that Buddy will deploy from. If you adjust the trigger mode to “On
+    push,” on each push to that branch, Buddy executes the pipeline.</p>
+  <p>Considering trigger modes, Manual (on click) is recommended for production, “On push” (automatic) for development,
+    and Recurrently (on time interval) for staging/testing.</p>
+  <figure><img src='https://cdn-images-1.medium.com/max/1024/1*E7oP-mCjC6dlnpumoRQjtw.png'>
+    <figcaption>Screenshot by Author</img>
+  </figure>
+  </figcaption>
+  <h3>Task 5. Add Actions</h3>
+  <p>Next you should add a new action to the pipeline. Buddy facilitates several different approaches for deploying your
+    project and lets you pick from hundreds of prespecified actions. I will add two actions in this scenario that will
+    execute the following tasks:</p>
+  <uli>Build the React app: download dependencies (npm, Yarn), compile assets.</uli>
+  <uli>Deploy the React App to AWS S3</uli>
+  <p>It is possible to manage React builds using the Node.js action. You can select the environment information and
+    specify the commands to be executed.</p>
+  <p>You can either use a single Node action to run all npm commands or use dedicated actions for each command. In this
+    example, I will be using dedicated actions for each command.</p>
+  <p>First, add an <code>npm install</code> command to make sure all your dependencies and libraries are in place for
+    the build process.</p>
+  <figure><img src='https://cdn-images-1.medium.com/max/1024/1*6btcCgYnLhE3IgLVxih_ug.png'>
+    <figcaption>Screenshot by Author</img>
+  </figure>
+  </figcaption>
+  <p>If you have any tests to run before deploying the project, Buddy provides options to run test automation using its
+    pipeline easily. You can use another Node action to execute tests in your project using the relevant command. In my
+    case, it's <code>npm run test</code>.</p>
+  <p>Then add another Node action to execute the <code>npm run build</code> command to build the project.</p>
+  <p>If you need to test those commands, you can simply run the pipeline manually before moving on to the next steps. If
+    there are any errors, you can find them in action logs.</p>
+  <figure><img src='https://cdn-images-1.medium.com/max/1024/1*C2vPovMth-VVkXO5nVddGQ.png'>
+    <figcaption>Screenshot by Author</img>
+  </figure>
+  </figcaption>
+  <p>Scroll down and click on S3 on the actions list.</p>
+  <figure><img src='https://cdn-images-1.medium.com/max/1024/1*8beYO3c4H3u6uKfjY9jG0Q.png'>
+    <figcaption>Screenshot by Author</img>
+  </figure>
+  </figcaption>
+  <p>Configure AWS integration and enter the name of your integration. Paste the Access Key Id and Secret Access Key
+    from the AWS console that you copied. Click on the “Add integration” button.</p>
+  <figure><img src='https://cdn-images-1.medium.com/max/1024/1*bUPXTKFqzqhkTmlei5F-gg.png'>
+    <figcaption></img>
+  </figure>
+  </figcaption>
+  <figure><img src='https://cdn-images-1.medium.com/max/1024/1*eo3RB7IDmaqKGSc9EMAtsQ.png'>
+    <figcaption>Screenshot by Author</img>
+  </figure>
+  </figcaption>
+  <p>Then configure action information, choose the Bucket ID you want to upload your files to. Set the “Source path” to
+    “/build”<strong> <strong> </strong> </strong>since your project build directory id is “source/build.” Also, make
+    sure that you have selected Pipeline Filesystem as the source since you build the project using the pipeline in the
+    previous action. Finally, click on the “Add this action” button.</p>
+  <figure><img src='https://cdn-images-1.medium.com/max/1024/1*fEW67HQgpax3Aavfu8MLug.png'>
+    <figcaption>Screenshot by Author</img>
+  </figure>
+  </figcaption>
+  <p>Now your pipeline is all set to deploy your React application to AWS S3.</p>
+  <p>What if you want to get notifications about the deployment? Buddy has an answer for that too.</p>
+  <p>Scroll down and move to Notifications. From the right-hand side of the page, select the service of your choice.
+    I’ll choose Slack, a popular notification service among Buddy users. As you’re adding a third-party service to your
+    pipeline, you will need to configure integration details. Here you can decide the scope of the integration.</p>
+  <figure><img src='https://cdn-images-1.medium.com/max/1024/0*WpHGjAb1Vj0WzDiy'>
+    <figcaption></img>
+  </figure>
+  </figcaption>
+  <p>Finally, you have to accept the OAuth permissions of the chosen application:</p>
+  <figure><img src='https://cdn-images-1.medium.com/max/1024/1*Kr4djjh5I9WsChkSzdqhDw.png'>
+    <figcaption></img>
+  </figure>
+  </figcaption>
+  <p>Then you can specify the notification message as your wish.</p>
+  <figure><img src='https://cdn-images-1.medium.com/max/1024/1*krygx6Ym7Y_MwRJWcrDecQ.png'>
+    <figcaption></img>
+  </figure>
+  </figcaption>
+  <p>Once someone pushes changes to your Git repository and executes the pipeline, you will be notified.</p>
+  <figure><img src='https://cdn-images-1.medium.com/max/1024/1*-tnEmgtpcTzJrWI5sFuJEA.png'>
+    <figcaption></img>
+  </figure>
+  </figcaption>
+  <p>Now you are all set, and the completed pipeline will look like this:</p>
+  <figure><img src='https://cdn-images-1.medium.com/max/1024/1*KYYjj9rlqaHibbnANjQgAA.png'>
+    <figcaption>Screenshot by Author</img>
+  </figure>
+  </figcaption>
+  <h3>Task 6. Run the Pipeline</h3>
+  <p>Once you push changes to your Git repository, your pipeline will execute and deploy your React application to AWS
+    S3.</p>
+  <figure><img src='https://cdn-images-1.medium.com/max/1024/1*j-kXNR5uLB9YAmja2rQ39w.png'>
+    <figcaption>Screenshot by Author</img>
+  </figure>
+  </figcaption>
+  <h3>Conclusion</h3>
+  <p>Automation has become a necessity to escape from the complexities of the modern software development process. CI/CD
+    tools make it possible to efficiently deliver the applications with new, enriched features to the users. Tools like
+    Buddy assist us in this role, allowing developers to build pipelines to perform actions for a wide variety of
+    technologies and integrate them to address the most unique and essential needs.</p>
+  <p>Thank you for reading!</p>
+</body>
+
+</html>
