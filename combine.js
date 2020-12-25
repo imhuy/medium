@@ -1,10 +1,9 @@
 
 const puppeteer = require('puppeteer');
-const URL = 'https://medium.com/better-programming/deploying-a-react-app-to-aws-s3-e0f31be17734'
+const URL = 'https://medium.com/the-break-down-wake-up-journal/i-went-my-entire-life-not-knowing-i-was-autistic-aa869b7b09ab'
 const fetch = require('node-fetch');
 
 async function processData(data) {
-
     let content = []
     for (const key in data) {
         if (key.includes('Paragraph')) {
@@ -68,7 +67,7 @@ async function processUrl(url) {
         tag = tag[tag.length - 1]?.innerText;
         tags = tag?.replace(/\n/gi, ',')
 
-        //get thumb
+        //get thumb authour
         let thumb = document.querySelector('article').getElementsByTagName('img')
         let thumburl = thumb[0].currentSrc;
 
@@ -77,10 +76,24 @@ async function processUrl(url) {
         const result = content.filter(word => word.startsWith('window.__APOLLO_STATE'))[0];
         const data = result.replace('window.__APOLLO_STATE__ = ', '');
 
+        //get title 
+        let title = document.getElementsByTagName('h1')
+        title = title[0]?.innerText;
+
+        //get description 
+        let description = document.getElementsByTagName('h2')
+        description = description[0]?.innerText;
+
+        // get image
+        let image = document.getElementsByName('twitter:image:src')
+        image = image[0]?.content;
+
         let obj = {
+            title: title,
             tags: [tags],
-            thumb: thumburl,
-            content: data
+            image: image,
+            content: data,
+            description: description
         }
         return obj;
     });
@@ -99,7 +112,6 @@ async function post(body) {
     })
         .then(res => res.json())
         .then(json => console.log(json));
-
 }
 
 
@@ -108,12 +120,11 @@ async function done() {
     let x = await processData(JSON.parse(r.content))
 
     const body = {
-        title: 'Deploying a React App to AWS S3',
+        title: r.title,
         content: x,
         tag: r.tags,
-        category: ['a', 'b', 'c'],
-        image: r.thumb,
-        description: 'huy test'
+        image: r.image,
+        description: r.description
     }
 
     await post(body)
