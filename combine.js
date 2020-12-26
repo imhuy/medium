@@ -1,6 +1,6 @@
 
 const puppeteer = require('puppeteer');
-const URL = 'https://medium.com/the-break-down-wake-up-journal/i-went-my-entire-life-not-knowing-i-was-autistic-aa869b7b09ab'
+const URL = 'https://towardsdatascience.com/apples-new-m1-chip-is-a-machine-learning-beast-70ca8bfa6203'
 const fetch = require('node-fetch');
 
 async function processData(data) {
@@ -65,7 +65,7 @@ async function processUrl(url) {
         //get tag
         let tag = document.getElementsByTagName('ul')
         tag = tag[tag.length - 1]?.innerText;
-        tags = tag?.replace(/\n/gi, ',')
+        tags = tag?.replace(/\n/gi, ',').split(",");
 
         //get thumb authour
         let thumb = document.querySelector('article').getElementsByTagName('img')
