@@ -1,6 +1,6 @@
 
 const puppeteer = require('puppeteer');
-const URL = 'https://towardsdatascience.com/apples-new-m1-chip-is-a-machine-learning-beast-70ca8bfa6203'
+const URL = 'https://timdenning.medium.com/i-apologized-to-the-man-with-the-same-name-as-me-for-ruining-his-life-f8d915fcfe74'
 const fetch = require('node-fetch');
 
 async function processData(data) {
@@ -43,7 +43,7 @@ async function processData(data) {
             if (data[key].metadata != null) {
                 let ImageId = data[key].metadata.__ref.replace('ImageMetadata:', '')
                 let UrlImage = `https://cdn-images-1.medium.com/max/1024/${ImageId}`
-                OpenTag = `<figure><${data[key].type.toLowerCase()} src ='${UrlImage}'><figcaption>`
+                OpenTag = `<figure><${data[key].type.toLowerCase()} src ='${UrlImage}' width="100%"><figcaption>`
                 EndTag = '</' + data[key].type.toLowerCase() + '></figure></figcaption>'
             }
 
@@ -105,7 +105,7 @@ async function processUrl(url) {
 
 
 async function post(body) {
-    fetch('http://localhost/post', {
+    fetch('http://localhost:9000/post', {
         method: 'post',
         body: JSON.stringify(body),
         headers: { 'Content-Type': 'application/json' },
@@ -126,7 +126,7 @@ async function done() {
         image: r.image,
         description: r.description
     }
-
+//    console.log(body)
     await post(body)
 
 }
