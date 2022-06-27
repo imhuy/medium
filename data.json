@@ -1,95 +1,70 @@
 
-<style type="text/css">html {scroll-behavior: smooth}
-#table_of_contents {
-border: 1px solid #c1c1c1;
-padding: 25px 20px 15px 25px;
-margin: 10px;
-border-radius: 20px;
-}
-</style>
-<div id="table_of_contents">
-<h4><strong>Table of Contents</strong></h4>
-<ul>
-<li><a href="#what-do-you-get-in-the-box">What Do You Get in the Box?</a></li>
-<li><a href="#design-and-build-quality">Design and Build Quality</a></li>
-<li><a href="#how-it-actually-works">How it Actually Works</a></li>
-<li><a href="#using-the-cryptotag">Using the Cryptotag</a></li>
-<li><a href="#putting-it-to-the-test">Putting it to the Test</a></li>
-<li><a href="#pros">Pros</a></li>
-<li><a href="#cons">Cons</a></li>
-<li><a href="#final-thoughts">Final Thoughts</a></li>
-</ul>
-</div>
-<p>Whenever setting up a new wallet, you will be presented with a 12 or 24 word seed phrase which needs to be written down and stored away. More often than not, the seed is simply written down on a piece of paper and stored away safely (at least I hope you do that). However, while storing it on paper is the most common form, it certainly isn’t the safest. Paper can be easily damaged by the elements, and can suffer from fire or water damage.&nbsp;</p>
-<p>I had the unfortunate incident of experiencing a house fire, and had to rush to save my seed phrases stored on paper. This is where premium seed phrase backup solutions come in. They offer protection against the elements or any unfortunate incident. Cryptotag happens to have such an offering, and were kind enough to send us a Cryptotag Zeus for review.&nbsp;</p>
-<p>&nbsp;</p><div class="paywall">
-<h2 id="what-do-you-get-in-the-box">What Do You Get in the Box?</h2>
-<p><img alt="" loading="lazy" src="//s3.amazonaws.com/assets.coingecko.com/app/public/ckeditor_assets/pictures/2997/content_picture_1.jpg" style="width: 800px; height: 533px;"></p>
-<p><img alt="" loading="lazy" src="//s3.amazonaws.com/assets.coingecko.com/app/public/ckeditor_assets/pictures/2998/content_DSC02576.JPG" style="width: 800px; height: 533px;"></p>
-<p>The Cryptotag Zeus comes in a tightly packed rectangular box. Upon opening it, you will be presented with two titanium plates, the center punch in which to enter your seed, a user guide with a BIP 39 word list, two pieces of paper to write down your seed, some matches, and also earplugs.&nbsp;</p>
-<p><img alt="" loading="lazy" src="//s3.amazonaws.com/assets.coingecko.com/app/public/ckeditor_assets/pictures/2991/content_DSC02589.JPG" style="width: 800px; height: 533px;"></p>
-<p>Upon opening the box, I was trying to figure out the use of the matches and earplugs, so I reached out to Indy from Cryptotag. According to him, the matches are to be used to burn the conversion sheets containing the seed once it has been punched in on the titanium plates. Meanwhile, the center punch can get quite loud, so the earplugs can come in handy. While these two items didn’t have to be included, it is a nice touch from the Cryptotag team to have done so.&nbsp;</p>
-<p>&nbsp;</p>
-<h2 id="design-and-build-quality">Design and Build Quality</h2>
-<p><img alt="" loading="lazy" src="//s3.amazonaws.com/assets.coingecko.com/app/public/ckeditor_assets/pictures/2992/content_DSC02600.JPG" style="width: 800px; height: 533px;"></p>
-<p>The aerospace grade titanium plates are very minimalist in design. The point of the plates is to hold and protect your seed, so there isn’t the need to have fancy designs. On the front of each plate, the Cryptotag logo of a bull’s head is printed on.</p>
-<p>To keep the two plates together, clamps are provided. These seem to be made out of titanium as well, and are very durable to any sort of bending. Now, on the flipside of plates, the most important component can be found - the seed storage. The numbers representing the seed phrase are quite small, but at the same time they’re rather easy to read. So while the Cryptotag itself has a small footprint, the numbers are still very legible.&nbsp;</p>
-<p>When it comes to the numbers on the back, they are quite resistant to scratches from most items. However, if scratched with the included center punch, the numbers do start to fade away slightly. It is unlikely though that the plates will be subjected to such levels of abuse during regular usage.</p>
-<p>&nbsp;</p>
-<h2 id="how-it-actually-works">How it Actually Works</h2>
-<p>When I first received the Cryptotag, I wondered how it was able to correlate every word out there with certain numbers, since there are an estimated <a href="https://www.lexico.com/explore/how-many-words-are-there-in-the-english-language">171,476 words</a> in the Oxford English dictionary. That’s when I discovered the BIP39 industry standard.</p>
-<p><img alt="" loading="lazy" src="//s3.amazonaws.com/assets.coingecko.com/app/public/ckeditor_assets/pictures/2993/content_DSC02577.JPG" style="width: 800px; height: 533px;"></p>
-<p>Cryptotag utilizes the BIP39 industry standard when it comes to correlating the numbers to certain words. This standard is an alphabetical word list of 2,048 words. Each word in the list has a correlating number, and follows alphabetical order. For example, the first word is ‘Abandon’ with the number ‘0001’. Meanwhile, the last number is ‘Zoo’ with the number 2,048. Each of these words with their corresponding number is included in the setup guide. If you happen to lose the guide, worry not as it can be found online as well.&nbsp;</p>
-<p>The BIP39 standard has been adopted by the majority of wallets out there, as well as many protocols. This includes blockchains such as Ethereum, Solana, Bitcoin, and many others. Therefore, if you have a seed phrase you would like to store in your Cryptotag, it is more than likely that the words correspond to numbers in the BIP39 list.</p>
-<p>&nbsp;</p>
-<h2 id="using-the-cryptotag">Using the Cryptotag</h2>
-<p>To get started with the Cryptotag, you will of course need to have a crypto wallet. When creating a wallet, you will be presented with a 24 word seed phrase. Write the seed phrase onto the conversion sheet provided by Cryptotag.&nbsp;For each word in the phrase, look for the corresponding 4 digit code in the setup guide provided, and write it down on the sheet as well. Make sure to triple check the codes as there's no turning back after you've punched it in!&nbsp;</p>
-<p>Once that's&nbsp;done, you can start punching holes onto the titanium plates. Each code contains four numbers, so be sure to punch every number in, even any zeros at the start. For example, the corresponding number for ‘Abandon’ is ‘0001’. Do punch in the three zeros onto the plate, and not just the number ‘1’. This is to avoid any confusion when viewing the plate in the future. The end result is you should have two titanium plate backs which look like old fashioned punch cards. &nbsp;</p>
-<p><img alt="" loading="lazy" src="//s3.amazonaws.com/assets.coingecko.com/app/public/ckeditor_assets/pictures/2994/content_DSC02622.JPG" style="width: 800px; height: 533px;"></p>
-<p>When using the center punch, hold it at a 90° angle and press down hard. Once you hear a loud ‘bang’, the center punch can be removed. We suggest you wear the included earbuds when doing so as the noise it makes is pretty loud. After you have completed all the words, discard the sheet with the seed phrase by burning it with the included matches.&nbsp;</p>
-<p>The whole process of punching in the seed phrase on to the plates took about 15 minutes to complete.</p>
-<p>&nbsp;</p>
-<h2 id="putting-it-to-the-test">Putting it to the Test</h2>
-<p><img alt="" loading="lazy" src="//s3.amazonaws.com/assets.coingecko.com/app/public/ckeditor_assets/pictures/2995/content_DSC02652.JPG" style="width: 800px; height: 533px;"><br>
-Now that a seed phrase has been etched into the plates, does the Cryptotag actually safeguard it from the elements? According to Cryptotag, the titanium plates are rated to stand temperatures up to 1,667 °C (3,032 °F). While I don’t own an industrial blow torch, I did test it out under a miniature blow torch.&nbsp;After heating a certain part of the plate for a minute or so, the plate was left unscathed. All the torch caused was some slight discolouration, with no visible signs of warping.</p>
-<p><img alt="" loading="lazy" src="//s3.amazonaws.com/assets.coingecko.com/app/public/ckeditor_assets/pictures/2996/content_20220323_102327.jpg" style="width: 800px; height: 600px;"></p>
-<p>When using brute force to bend the plate with a pair of pliers, the plates held their form. Even running over it with a car barely left a mark. Only a couple of scuffs were visible after it was subjected to such torture.&nbsp;</p>
-<p>In the video below, we put the Cryptotag through some ardous torture. As can be seen by the end of it, both plates were left intact.</p>
 <style type="text/css">.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 </style>
-<div class="embed-container"><iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/vsNxwK4bJyc"></iframe></div>
-<h2>&nbsp;</h2>
+<div class="embed-container"><iframe allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/OVyn07EmEAw"></iframe></div>
 <p>&nbsp;</p>
-<h2 id="pros">Pros</h2>
-<ul>
-<li>Very durable</li>
-<li>Small footprint makes it easy to store</li>
-<li>No moving parts such as tiles, meaning words don’t get jumbled up</li>
-</ul>
-<h2 id="cons">Cons</h2>
-<ul>
-<li>Brute force required to punch holes</li>
-<li>Can only be used once</li>
-<li>On the expensive side</li>
-</ul>
-<h2>&nbsp;</h2>
-<h2 id="final-thoughts">Final Thoughts</h2>
-<p>The Cryptotag is an interesting way to store seed phrases. While it can only be used once, and mistakes can’t be corrected, it removes the likelihood of jumbling up the seed. This is definitely a premium option for crypto owners out there, and the process of setting it up is simple and can be quite enjoyable. If you would like to purchase a Cryptotag Zeus for yourself, you may do so <a href="https://cryptotag.io/?tap_a=108211-2b87a9&amp;tap_s=2495308-f643a5">here</a>*.&nbsp;<br>
-<br>
-<span style="font-size:14px;"><em>*CoinGecko receives a small&nbsp;part of the profit from any sales done through the affiliate link.</em></span></p>
+<p dir="ltr">When it comes to buying and selling digital currencies, which is better? A <a href="https://www.coingecko.com/en/exchanges">centralized exchange (CEX)</a>? Or a <a href="https://www.coingecko.com/en/dex">decentralized exchange</a><b><a href="https://www.coingecko.com/en/dex"> </a></b><a href="https://www.coingecko.com/en/dex">(DEX)</a>?&nbsp;Frame the question this way, and it's tricky to answer. But there <em>is </em>a correct answer, and it's going to annoy the crap out of you:</p>
+<p dir="ltr"><meta charset="utf-8">It depends.</p>
+<p dir="ltr">Yeah, yeah. You're rolling your eyes. I get it. But hear me out because this isn't a copout. There really <em>are </em>tradeoffs with cryptocurrency exchanges. It even depends on the type of exchange. If you're a crypto maximalist, then you might think that decentralization is the panacea for all ailments. You might even start to gag when someone whispers the words "centralized exchange" in your ear.&nbsp;</p>
+<p dir="ltr">But let's not be quick to rush to judgment here. Instead, let's put on our little analytical caps and reading glasses, and take a closer look, shall we?&nbsp;</p>
 <p>&nbsp;</p>
-</div>
+<h2 dir="ltr">CEX vs DEX: How do they Work?</h2>
+<p dir="ltr"><img alt="" loading="lazy" src="//s3.amazonaws.com/assets.coingecko.com/app/public/ckeditor_assets/pictures/2966/content_vadim-artyukhin-_92BitC3QEU-unsplash.jpg" style="width: 800px; height: 533px;"></p>
+<p dir="ltr"><span style="font-size:10px;">© <em>Vadim Artyukhin&nbsp; | Flickr</em></span></p>
+<p dir="ltr">CEXs operate like traditional stock markets based on an order book. Think of them like an open market with a central authority matching buyers and sellers. On a CEX, it’s standard for all users to be able to see the full order book (i.e., all the buy and sell orders occurring on the exchange).&nbsp;These two features facilitate what is known as “price discovery”, where any user can identify the “last done price” or “market price”, as well as the depth of the order book. In exchange for facilitating the marketplace, the exchange takes a small cut from every trade.&nbsp;</p>
+<p dir="ltr">Centralized crypto exchanges such as <a href="https://www.coingecko.com/en/exchanges/binance">Binance</a> and <a href="https://www.coingecko.com/en/exchanges/coinbase-exchange">Coinbase</a> use an order book as well, and retain many of the features offered by traditional CEXs.&nbsp;</p>
+<p dir="ltr">So how does a DEX differ from a CEX?&nbsp;Well, since it doesn't have a central authority to keep track of an order book and match orders, DEXs had to devise a different approach to facilitate price discovery. A novel and innovative mechanism widely known today as the <a href="https://www.coingecko.com/en/categories/automated-market-maker-amm">automated market maker (AMM) model</a>&nbsp;made this possible. <a href="https://www.coingecko.com/en/exchanges/uniswap_v2">Uniswap</a> was the first DEX to use the AMM model.&nbsp;&nbsp;</p>
+<p dir="ltr">AMM DEXs can function thanks to an underlying liquidity pool that’s made available for each trading pair. For example, an ETH–USDC trading pair on a DEX would have an underlying liquidity pool with both ETH and USDC tokens in it.&nbsp;The total amount of tokens within the liquidity pool represents, as the name suggests, the total amount of liquidity for the trading pair, similar to how you would consider the depth of the order book on a CEX.&nbsp;&nbsp;</p>
+<p dir="ltr">But how are the prices determined? Well, it’s pretty simple, actually. The current market price of a trading pair is the ratio between the amount of tokens in its liquidity pool.&nbsp;For example, if the current market price for ETH is $3,000, then within the ETH–USDC liquidity pool, the current ETH:USDC ratio must be 1:3000 (i..e., for every 1 ETH, there must be 3,000 USDC in the pool.)</p>
+<p>&nbsp;</p>
+<p><meta charset="utf-8"></p>
+<h2 dir="ltr">What are the Differences between a CEX and a DEX?&nbsp;</h2>
+<p dir="ltr">We’ve got a lot of ground to cover, since the differences between CEXs and DEXs are numerous. But here we’ll stick to the main ones, starting with the core differences below.&nbsp;</p>
+<h2 dir="ltr"><meta charset="utf-8"></h2>
+<h3 dir="ltr" role="presentation">1. Core Exchange Features</h3>
+<p dir="ltr">As you can imagine, CEXs have a long history, one that boasts many innovative features over the years. For example, they offer a range of order types to cater to the different types of traders, from the most basic market and limit orders to the more complex variety such as the iceberg order.&nbsp;</p>
+<p dir="ltr">A good CEX also has the ability to provide deep liquidity by collaborating with market makers, and are typically built to support very high throughput (i.e., transactions per second).&nbsp;</p>
+<p dir="ltr">In contrast, AMM DEXs are currently only able to support swaps that are instant... for now. However, newer DEXs such as Serum and IDEX are starting to incorporate order books, so that they can provide the best financial products from both worlds.&nbsp;</p>
+<p dir="ltr"><meta charset="utf-8"></p>
+<h3 dir="ltr" role="presentation">2. Trading Volume</h3>
+<p dir="ltr">Trading volume is a critical measure of financial activity on a platform. Not to mention that tracking trading volume helps measure greater DeFi adoption as well. The chart below shows the monthly DEX trading volume over the years.&nbsp;</p>
+<p dir="ltr">&nbsp;<img alt="" loading="lazy" src="//s3.amazonaws.com/assets.coingecko.com/app/public/ckeditor_assets/pictures/2967/content_dex-volume-monthly.png" style="width: 800px; height: 420px;"></p>
+<p dir="ltr"><span style="font-size:10px;">© <em>CoinGecko&nbsp; |&nbsp; The Block Crypto</em></span></p>
+<p dir="ltr">However impressive the data may look, when you think about it, we're <em>still </em>early. (Yeah. I got sick of hearing it too, but in this case, it is true.) See, Uniswap has been operational for only a few years compared to traditional exchanges. And yet, thanks mainly to Uniswap, DEXs have been eating away at their market share like termites.&nbsp;&nbsp;</p>
+<p dir="ltr">Certainly, the lack of a fiat on-ramp for DEXs hurts their ability to access fiat capital directly. But again, further innovations in the space (as well as clearer regulations) should help make significant headways in that regard.&nbsp;</p>
+<h3 dir="ltr" role="presentation">3. Transaction Fees</h3>
+<p dir="ltr">The transaction fees of a DEX depend on the chain it resides on. For instance, Uniswap, which runs on Ethereum, can cost you $60 depending on network congestion (and traffic on Ethereum can make you wish you never left the house. Since Ethereum runs on an auction model, users have to bid for their transactions to get included in the next block. That's why greater congestion leads to increasingly costly bidding wars, ergo the high fees).&nbsp;</p>
+<p dir="ltr">Compare this to Cardano, which charges pennies for every transaction. Or how about Solana? Solana also costs peanuts, and it offers a seamless user experience to boot. This is where DEXs have a clear advantage over CEXs, by the way. CEXs collect trading fees, whereas DEXs aim to minimize economic rents. By offering a competitive alternative, DEXs should force CEXs to innovate faster over time as well.&nbsp;&nbsp;</p>
+<h3 dir="ltr">4. Other Features</h3>
+<h3 dir="ltr"><img alt="" loading="lazy" src="//s3.amazonaws.com/assets.coingecko.com/app/public/ckeditor_assets/pictures/2969/content_brian-matangelo-gRof2_Ftu7A-unsplash.jpg" style="width: 800px; height: 533px;"></h3>
+<p dir="ltr">© <em>Brian Matangelo&nbsp; |&nbsp; Unsplash</em></p>
+<p dir="ltr">Beyond just trading, many established CEXs have branched out to offer more products and offerings in response to the increased competition not just from other CEXs, but from DEXs as well.&nbsp;For example, many exchanges now offer some form of margin trading. CEXs are also beginning to offer “Earn” products, where investors can temporarily lock up their crypto with a CEX in exchange for a fixed return. Finally, some CEXs have also established “Launchpad” offerings to help new projects launch their own tokens directly on their exchanges.</p>
+<p dir="ltr">We’ve already established that liquidity pools are crucial for AMM DEXs, so it should come as no surprise that DEXs are willing to reward liquidity providers handsomely (sometimes up to two- to three-digit APYs) for providing liquidity in their trading pairs.&nbsp;If you have some extra crypto lying around, have a think about providing liquidity to a DEX trading pair. By locking in tokens into the smart contract that represents the liquidity pool, you’ll be rewarded with a percentage of the transaction fees.&nbsp;</p>
+<h2 dir="ltr"><meta charset="utf-8"></h2>
+<h3 dir="ltr">5. Risks</h3>
+<p dir="ltr"><img alt="" loading="lazy" src="//s3.amazonaws.com/assets.coingecko.com/app/public/ckeditor_assets/pictures/2977/content_tezos-JjjSPPzzpkU-unsplash.jpg" style="width: 800px; height: 533px;"></p>
+<p dir="ltr"><span style="font-size:10px;">© <em>Tezos&nbsp; |&nbsp; Unsplash</em></span></p>
+<p dir="ltr">While providing liquidity may seem like a good deal, generally, the better the deal, the higher the risk. And in this case, the main risk that comes with these handsome yield rates is one of the scariest things that's ever happened to me. And this financial beast has a name: <strong>Impermanent loss</strong>.&nbsp;That's when the liquidity you provided has less value when you exit. See, AMMs rely on a mathematical formula to ensure that they always have liquidity for a token pair. This formula is expressed as&nbsp;<em>x </em>* <em>y </em>= <em>k,&nbsp;</em>where x and y represent the individually paired tokens. To ensure that <em>k </em>remains a fixed constant, when someone buys an amount of x, its price rises accordingly, thereby sustaining the fixed value of <em>k</em>.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p dir="ltr">Here's a quick example.&nbsp;</p>
+<p dir="ltr">Let's say we have an ETH–DAI pair, with $1000 in ETH and an equivalent amount in DAI (i.e., your DAI, a stablecoin, is also worth $1000.) But let’s say that the price of ETH doubles to $2000. So technically, you should have $3000.&nbsp;But to maintain the <em>k </em>constant, your LP value remains at $2000 (i.e., $1000 in DAI and $1000 in ETH). Why?&nbsp;</p>
+<p dir="ltr">This condition creates an arbitrage opportunity, where buyers are incentivized to start buying up your ETH for cheap (with DAI) until your whole LP returns to its original value, thus ensuring that the <em>k </em>constant is maintained.&nbsp;In this scenario, you end up with a lot more DAI⁠—and a lot less ETH⁠—than you put in at the start. In other words, you miscalculated your opportunity cost of capital. Had you simply held onto your ETH and your DAI, without providing liquidity, you would've had $3000, thus pocketing an extra $1000.</p>
+<p dir="ltr">You can try to wait for the price to come back down before you pull out. If you don't, you may miss out on this price action. And that is how your impermanent loss becomes <em>permanent</em>, kids.&nbsp;</p>
+<p dir="ltr"><strong>Not your keys, not your coins.</strong>&nbsp;One thing you will want to consider when using a DEX versus a CEX is how comfortable you are leaving your crypto assets on an exchange. See, when you lock in your crypto assets on a CEX, you’re essentially locking them into a hot wallet owned by the exchange. In other words, you no longer have custody over your own assets.&nbsp;By the way, even when you trade on an exchange and keep your assets on “your” exchange wallet, keep in mind, you do NOT own this wallet, so make sure to move your crypto assets from your exchange wallet to your actual wallet at your earliest convenience.&nbsp;&nbsp;</p>
+<p dir="ltr">We can compare this with a DEX, where to engage with the protocol, all you need to do is to connect your crypto wallet. In other words, the DEX does not have custody over your assets when you’re trading.&nbsp;You do.&nbsp;</p>
+<p dir="ltr"><strong>Hacks, bugs, and smart contracts.</strong>&nbsp;Real quick: Can CEXs get hacked? Sure.&nbsp;So can DEXs. Smart contracts aren't immune from bugs, after all. At least CEXs can provide some form of insurance. DEXs can't, but certain hacked protocols have been successful in returning funds to their users. For financial services that don't need a central authority, you've gotta admit: That's pretty nifty, eh?</p>
+<p>&nbsp;</p>
+<h3 dir="ltr">Other Considerations in Choosing a CEX vs. a DEX</h3>
+<p dir="ltr">Centralization affords us many amazing benefits like speed and convenience. But so does decentralization (e.g., reduced vulnerability to centralized attacks).&nbsp;DEXs are no exception.&nbsp;</p>
+<p dir="ltr">Another major benefit afforded by decentralized crypto exchanges? They don't require you to undergo any security measures. Specifically, no Know Your Customer and Anti-Money Laundering procedures.&nbsp;So don't hold up your passport and today's date like you're in some hostage video. What do you do instead? Simply connect your wallet containing your digital assets, and off you go!</p>
+<p dir="ltr">Finally, you should consider the types of tokens you’re trading. CEXs sometimes take time to list certain less popular coins, or coins that may not have significant liquidity available.&nbsp;With DEXs, though, there’s no gatekeeper, and literally anyone can create a new liquidity pool as long as they deposit a desired token pair. So if you’re aping into an obscure coin you can’t find on your CEX, chances are, you may find it on a DEX instead.&nbsp;</p>
+<p>&nbsp;</p>
+<h2 dir="ltr">The Road Ahead is Decentralized (Sort of)</h2>
+<p dir="ltr"><img alt="" loading="lazy" src="//s3.amazonaws.com/assets.coingecko.com/app/public/ckeditor_assets/pictures/2978/content_lucrezia-carnelos-IMUwe-p1yqs-unsplash.jpg" style="width: 800px; height: 600px;"></p>
+<p dir="ltr"><span style="font-size:10px;">© <em>Lucrezia Carnelos&nbsp; |&nbsp; Unsplash</em></span></p>
+<p dir="ltr">The future will look DEX-terous. Will we still have CEXs? Probably. But they most likely won't play such a central role in our lives anymore.&nbsp;Once we can figure out the tooling to enable fiat on-ramps for DEXs—as well as other cool instruments only CEXs can currently provide—CEXs will be relegated to secondary status. (They’ll still exist, but to serve specific use cases).</p>
+<p dir="ltr">See, if you still read recent articles about DEXs, many of them will point out that margin trades are not possible. But this is old news. And who can blame the writers? The crypto space moves fast. (Faster than you can click "Publish" sometimes). Today we’ve got margin protocols like Mirror and Perpetual Protocol. We’ve got awesome lending protocols like Aave and Bancor too, and we’re only scratching the surface.</p>
+<p dir="ltr">The future will look like individual empowerment. DEXs are just one type of DeFi protocol that grants us the ability to squeeze more juice out of our capital. Other DeFi instruments that we haven’t thought of yet will allow us to do even more.&nbsp;But for now, for today, if you're a traditional investor who's new to DeFi, DEXs are a great place to start. I firmly believe they’ll act as a gateway for greater mass adoption of more advanced DeFi protocols. And the crypto space will form the financial hub where all the colorful characters from all walks of life emerge as crypto enthusiasts to hang out.&nbsp;</p>
+<p dir="ltr">Whether they be DeFi degens, NFT collectors, sh*tposting meme lords, or normies... DEXs will bring us all together, acting as an onboarding ramp and the road to DeFi.&nbsp;</p>
 <div class="tw-mb-4"></div>
-<div class="tw-flex tw-bg-gray-50 dark:tw-bg-gray-700 tw-p-5">
-<div class="tw-mr-4 tw-flex-shrink-0 tw-self-center">
-<img class="tw-h-16 tw-w-16 tw-border tw-border-gray-300 tw-bg-white tw-text-gray-300" alt="Shaun Paul Lee" src="https://gravatar.com/avatar/a223f232ba1ecbd97f00f93367dddd1d" width="80" height="80">
-</div>
-<div>
-<h4 class="tw-text-lg tw-font-bold">Shaun Paul Lee</h4>
-<p class="tw-mt-1">
-Shaun is a Research Associate at CoinGecko with a fondness for memes and farming on the blockchain.
-Follow the author on Twitter <a target="_blank" href="https://twitter.com/ShaunPaulLee">@ShaunPaulLee</a>
-</p>
-</div>
-</div>
+<div class="tw-flex tw-bg-gray-50 dark:tw-bg-gray-700 tw-p-5"></div>
 <div class="tw-text-center tw-mt-5 tw-text-base tw-underline"></div>
